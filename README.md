@@ -14,3 +14,13 @@ https://test.pypi.org/project/personal-assistant-bot/0.3.0/
 3. Edit and delete entries
 3. Help with planning, tracking contacts' birthdays
 5. Sort files in folders by extension
+
+### Download from - https://hub.docker.com/
+```
+docker pull avtarso/homework2
+```
+
+### Start downloaded image:
+```
+docker run -i avtarso/homework2
+```
