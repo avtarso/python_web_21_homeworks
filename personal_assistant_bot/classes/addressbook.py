@@ -74,7 +74,7 @@ class AddressBook(UserDict):
     def find_record(self, find_string):
         find_string = find_string.lower()
 
-        book = AddressBook()
+        book = self.__class__()
         for i, (name, record) in enumerate(self.data.items(), 1):
             if find_string.isdigit():
                 for phone in record.phones:
@@ -86,7 +86,7 @@ class AddressBook(UserDict):
         return book
     
     def find_birthdays(self, number):
-        book = AddressBook()
+        book = self.__class__()
         try:
             number_days = int(number)            
             today_date = date.today()
@@ -104,10 +104,9 @@ class AddressBook(UserDict):
         finally:
             return book
 
-    @classmethod
-    def fill_AdressBook(cls):
+    def fill_AdressBook(self):
 
-        book = cls()
+        book = self.__class__()
 
         john_record1 = Record("John Black")
         john_record1.add_phone("1234567890")
@@ -144,25 +143,32 @@ class AddressBook(UserDict):
 
         book.write_contacts_to_file(addressbook_filename)
 
-        return book
+
+
+
+        self = book
+
+        # print("fill_AdressBook")#
+        # print(self)#
+        # print(len(self))#
+        # print("fill_AdressBook")#
     
 
     def write_contacts_to_file(self, addressbook_filename):
         with open(addressbook_filename, "wb") as fh:
             pickle.dump(self, fh)
     
-    @classmethod
-    def read_contacts_from_file(cls, addressbook_filename):
-        book = cls()
+    def read_contacts_from_file(self, addressbook_filename):
+        book = self.__class__()
         try:
             with open(addressbook_filename, "rb") as fh:
                 book = pickle.load(fh)
-            return book
         except:
             print(Fore.RED + "File with recors was deleted or was never created!")
             print(Fore.GREEN + "I created a file with a records for example!")
-            return book.fill_AdressBook()
-    
+            book.fill_AdressBook()
+        return book
+
     def appruve_record(self, new_record):
         print(new_record)
         print('''\nWhat You will do with this record?
