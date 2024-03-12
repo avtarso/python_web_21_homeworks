@@ -5,6 +5,7 @@ Simple install! Only one command in terminal!
 ```
 pip install -i https://test.pypi.org/simple/ personal-assistant-bot
 ```
+https://test.pypi.org/project/personal-assistant-bot/0.3.0/
 
 ## What can this bot do?
 
