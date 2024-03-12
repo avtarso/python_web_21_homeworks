@@ -11,6 +11,7 @@ try:
     from settings.settings import addressbook_filename, PAG
     from classes.note import Note
     from classes.notes import Notes
+    from functions.sort import sort
     from functions.functions import make_menu
     from functions.make_header import make_header
 except ModuleNotFoundError:
@@ -27,6 +28,7 @@ except ModuleNotFoundError:
     from personal_assistant_bot.functions.make_header import make_header    
     from personal_assistant_bot.classes.note import Note
     from personal_assistant_bot.classes.notes import Notes
+    from personal_assistant_bot.functions.sort import sort
     from personal_assistant_bot.settings.settings import addressbook_filename, PAG
 
 
