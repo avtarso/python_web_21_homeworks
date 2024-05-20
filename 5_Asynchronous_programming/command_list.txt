@@ -1,0 +1,2 @@
+start - get USD and EUR currency
+ping - check connection
